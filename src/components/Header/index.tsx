@@ -1,5 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Header: React.FC = () => {
-  return <div>Header</div>
-}
+  return (
+    <div>
+      <Link to="/share">Share</Link>
+    </div>
+  );
+};
 
 export default Header;

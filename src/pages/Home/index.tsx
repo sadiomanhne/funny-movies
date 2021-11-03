@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import MovieItem from "../../components/MovieItem";
+import { useMovies } from "../../contexts/movie";
 import MovieService from "../../services/movie";
 import IMovie from "../../types";
 
 const Home: React.FC = () => {
-  const [movies, setMovies] = useState<IMovie[]>([]);
+  const { movies = [], setMovies } = useMovies();
 
   const onDataChange = (snapshot: any) => {
     const movies = snapshot?.val() || [];
@@ -20,9 +21,9 @@ const Home: React.FC = () => {
 
   return (
     <div className="movie-list">
-        {movies.map((movie: IMovie) => (
-          <MovieItem key={movie.id} {...movie}/>
-        ))}
+      {movies.map((movie: IMovie) => (
+        <MovieItem key={movie.id} {...movie} />
+      ))}
     </div>
   );
 };

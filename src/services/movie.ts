@@ -8,20 +8,9 @@ class MovieService {
     return db;
   }
 
-  create(movie: IMovie) {
-  return db.set([movie])
-  }
-
-  update(key: string, value: any) {
-    return db.child(key).update(value);
-  }
-
-  delete(key: string) {
-    return db.child(key).remove();
-  }
-
-  deleteAll() {
-    return db.remove();
+  update(movies: IMovie[]) {
+    debugger;
+    return db.set(movies);
   }
 }
 
