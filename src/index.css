@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.movie-item {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.mr-8 {
+  margin-right: 8px !important;
+}
