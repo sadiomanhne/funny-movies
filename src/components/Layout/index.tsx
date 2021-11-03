@@ -1,10 +1,12 @@
 import Header from "../Header";
 
 const Layout: React.FC = ({ children }) => {
-  return <div>
-    <Header />
-    {children}
-  </div>;
+  return (
+    <div className="container">
+      <Header />
+      {children}
+    </div>
+  );
 };
 
 export default Layout;
