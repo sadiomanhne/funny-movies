@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
-import "firebase/database";
 import "firebase/auth";
+import "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYJYYuCWVZ33K2wMsgsfc6NgjZwljFlag",
@@ -13,6 +13,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
+const db = firebase.firestore();
 
 const signInWithEmailAndPassword = async (email: string, password: string) => {
   auth
@@ -38,6 +39,11 @@ const registerWithEmailAndPassword = async (
   auth
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
+      const email = userCredential?.user?.email;
+      db.collection("users").doc(email!).set({
+        email,
+        provider: "local",
+      });
       alert("Register account successfully!");
     })
     .catch((error) => {
@@ -51,9 +57,8 @@ const logout = () => {
 
 export {
   auth,
+  db,
   signInWithEmailAndPassword,
   registerWithEmailAndPassword,
   logout,
 };
-
-export default firebase.database();
