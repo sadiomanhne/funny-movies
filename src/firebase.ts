@@ -3,12 +3,12 @@ import "firebase/auth";
 import "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAYJYYuCWVZ33K2wMsgsfc6NgjZwljFlag",
-  authDomain: "funny-movies-5fcac.firebaseapp.com",
-  projectId: "funny-movies-5fcac",
-  storageBucket: "funny-movies-5fcac.appspot.com",
-  messagingSenderId: "949853854373",
-  appId: "1:949853854373:web:ab048539cbba867b424b4c",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 firebase.initializeApp(firebaseConfig);
