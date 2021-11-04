@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import IMovie from "../../types";
 import MovieService from "../../services/movie";
 import { useMovies } from "../../contexts/movie";
@@ -47,6 +47,8 @@ const ShareVideo: React.FC = () => {
       setError("The URL is not from Youtube!");
     }
   };
+
+  if (!user) return <Redirect to="/" />;
 
   return (
     <div className="share-video">
