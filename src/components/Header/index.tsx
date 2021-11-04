@@ -10,10 +10,13 @@ const Header: React.FC = () => {
 
   return (
     <div className="header row">
-      <div className="header-logo col-6" onClick={() => history.push("/")}>
+      <div
+        className="header-logo col-12 col-lg-6"
+        onClick={() => history.push("/")}
+      >
         Funny Movies
       </div>
-      <div className="header-user-info col-6">
+      <div className="header-user-info col-12 col-lg-6">
         {user ? <HeaderAuth /> : <HeaderGuest />}
       </div>
     </div>
