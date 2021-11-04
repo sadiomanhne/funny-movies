@@ -3,5 +3,5 @@ export default interface IMovie {
   embedId: string;
   title?: string;
   description?: string;
-  shareBy?: string;
+  shareBy?: string | null;
 }

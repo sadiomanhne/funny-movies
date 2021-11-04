@@ -1,14 +1,19 @@
-import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, useHistory } from "react-router-dom";
+import { auth, logout } from "../../../firebase";
 
-interface IHeaderAuth {
-  username: string;
-}
-const HeaderAuth: React.FC<IHeaderAuth> = ({ username }) => {
+const HeaderAuth: React.FC = () => {
+  const [user] = useAuthState(auth);
+  const history = useHistory();
+  const handleLogout = () => {
+    logout();
+    history.push("/");
+  };
   return (
     <div className="header-auth">
       <div>
         <span className="mr-8">Welcome</span>
-        <span>{username}</span>
+        <span>{user?.email}</span>
       </div>
       <div>
         <Link to="/share">
@@ -16,7 +21,9 @@ const HeaderAuth: React.FC<IHeaderAuth> = ({ username }) => {
         </Link>
       </div>
       <div>
-        <button className="btn btn-danger">Logout</button>
+        <button className="btn btn-danger" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
     </div>
   );

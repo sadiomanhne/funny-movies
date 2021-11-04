@@ -1,7 +1,7 @@
 import firebase from "../firebase";
 import IMovie from "../types";
 
-const db = firebase.ref("movies");
+const db = firebase?.ref("movies");
 
 class MovieService {
   getAll() {

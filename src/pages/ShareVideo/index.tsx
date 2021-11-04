@@ -3,12 +3,15 @@ import { useHistory } from "react-router-dom";
 import IMovie from "../../types";
 import MovieService from "../../services/movie";
 import { useMovies } from "../../contexts/movie";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase";
 
 const ShareVideo: React.FC = () => {
   const [url, setUrl] = useState<string>("");
   const [error, setError] = useState<string>("");
   const { movies = [] } = useMovies();
   const history = useHistory();
+  const [user] = useAuthState(auth);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -30,7 +33,7 @@ const ShareVideo: React.FC = () => {
         const movie: IMovie = {
           id: dateString,
           embedId,
-          shareBy: embedId,
+          shareBy: user?.email,
           title: "A funny movie from Youtube",
           description:
             "For example, here are two grid layouts that apply to every device and viewport, from xs to xl. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.",
