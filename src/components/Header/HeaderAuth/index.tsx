@@ -13,7 +13,7 @@ const HeaderAuth: React.FC = () => {
     <div className="header-auth">
       <div>
         <span className="mr-8">Welcome</span>
-        <span>{user?.email}</span>
+        <strong>{user?.email}</strong>
       </div>
       <div>
         <Link to="/share">
