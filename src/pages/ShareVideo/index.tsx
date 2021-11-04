@@ -30,7 +30,7 @@ const ShareVideo: React.FC = () => {
         const movie: IMovie = {
           id: dateString,
           embedId,
-          shareBy: user?.email || "",
+          shareBy: user?.email!,
           title: "A funny movie from Youtube",
           description:
             "For example, here are two grid layouts that apply to every device and viewport, from xs to xl. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.",
@@ -38,7 +38,7 @@ const ShareVideo: React.FC = () => {
         MovieService.add(movie);
         history.push("/");
       } else {
-        setError("Can not parse the URL!");
+        setError("The URL is not a video!");
       }
     } else {
       setError("The URL is not from Youtube!");

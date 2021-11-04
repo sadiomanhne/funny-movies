@@ -19,6 +19,7 @@ const Home: React.FC = () => {
       {movies.map((movie: IMovie) => (
         <MovieItem key={movie.id} {...movie} />
       ))}
+      {movies.length === 0 && <div>No movies found.</div>}
     </div>
   );
 };
