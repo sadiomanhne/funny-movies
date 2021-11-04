@@ -9,7 +9,6 @@ class MovieService {
   }
 
   update(movies: IMovie[]) {
-    debugger;
     return db.set(movies);
   }
 }

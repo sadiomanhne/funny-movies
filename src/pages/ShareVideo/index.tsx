@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import IMovie from "../../types";
 import MovieService from "../../services/movie";
@@ -7,7 +7,7 @@ import { useMovies } from "../../contexts/movie";
 const ShareVideo: React.FC = () => {
   const [url, setUrl] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const { movies = [], setMovies } = useMovies();
+  const { movies = [] } = useMovies();
   const history = useHistory();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

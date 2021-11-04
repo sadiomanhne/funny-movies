@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import MovieItem from "../../components/MovieItem";
 import { useMovies } from "../../contexts/movie";
 import MovieService from "../../services/movie";
