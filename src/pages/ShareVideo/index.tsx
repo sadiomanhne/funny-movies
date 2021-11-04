@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory, Redirect } from "react-router-dom";
-import IMovie from "../../types";
 import MovieService from "../../services/movie";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";

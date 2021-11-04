@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import MovieItem from "../../components/MovieItem";
 import MovieService from "../../services/movie";
-import IMovie from "../../types";
 
 const Home: React.FC = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);

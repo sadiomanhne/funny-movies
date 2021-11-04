@@ -1,4 +1,4 @@
-export default interface IMovie {
+declare interface IMovie {
   id: string;
   embedId: string;
   shareBy: string;

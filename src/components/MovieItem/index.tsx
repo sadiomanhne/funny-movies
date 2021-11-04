@@ -1,4 +1,3 @@
-import IMovie from "../../types";
 import YoutubeEmbed from "../YoutubeEmbed";
 
 const MovieItem: React.FC<IMovie> = ({

@@ -1,8 +1,6 @@
 import { db } from "../firebase";
-import IMovie from "../types";
 
 const moviesColectionRef = db.collection("movies");
-
 class MovieService {
   async getAll() {
     try {
