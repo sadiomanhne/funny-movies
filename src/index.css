@@ -12,6 +12,13 @@ code {
     monospace;
 }
 
+.loading {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 40px;
+}
+
 .header-section {
   margin-bottom: 12px;
 }
@@ -30,9 +37,7 @@ code {
 }
 
 .header-auth {
-  display: flex;
   align-items: center;
-  justify-content: space-around;
 }
 
 .movie-item {
